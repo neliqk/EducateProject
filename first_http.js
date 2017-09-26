@@ -1,8 +1,10 @@
-var http = require('http');
+var express = require('express');
+var first_http = express();
 
-var server = http.createServer(function(req, res){
-    res.writeHead(200);
-    res.end('Hello');
-}); 
+first_http.get('/', function(req,res){
+    res.send('Hello');
+});
 
-server.listen(8080);
+first_http.listen(8080, function(){
+    console.log('Example');
+});
